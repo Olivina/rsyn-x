@@ -302,6 +302,7 @@ Sandbox::createInstance(const Rsyn::Instance instance) {
 
 	sandboxInstance->related = instance;
 	data->mappingInstance[instance] = sandboxInstance;
+	return sandboxInstance;
 } // end method
 
 // -----------------------------------------------------------------------------
@@ -322,6 +323,7 @@ Sandbox::createNet(const Rsyn::Net net) {
 	sandboxNet = createNet(net.getName());
 	sandboxNet->related = net;
 	data->mappingNet[net] = sandboxNet;
+	return sandboxNet;
 } // end method
 
 // -----------------------------------------------------------------------------
