@@ -78,15 +78,18 @@ Don't use Xcode default clang. You may install one from conda.
 conda create --name rsyn
 conda install clang
 brew install libomp qt@5
+brew link libomp
+brew link --force qt@5
 ...
 <install Boost_1_72_0> 
---with-libraries=system,headers,iostreams,graph,program_options,filesystem,regex
+./bootstrap.sh --with-libraries=system,headers,iostreams,graph,program_options,filesystem,regex
+./b2 install -j$(nproc)
 ...
 # for Qt libraries:
 export CMAKE_PREFIX_PATH=/usr/local/Cellar/qt@5/5.15.3/lib/cmake
 # to use conda clang++:
 export CC=clang CXX=clang++
-cmake -B build
+cmake -B build -DCMAKE_CXX_FLAGS=-L$(brew --prefix libomp)/lib
 cmake --build build -j$(nproc)
 ```
 
