@@ -86,6 +86,8 @@ brew install libomp qt@5
 export CMAKE_PREFIX_PATH=/usr/local/Cellar/qt@5/5.15.3/lib/cmake
 # to use conda clang++:
 export CC=clang CXX=clang++
+cmake -B build
+cmake --build build -j$(nproc)
 ```
 
 
