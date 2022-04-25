@@ -1589,7 +1589,7 @@ public:
 		return load;
 	} // end method
 	
-	//! @brief Returns the clock pin of a register cell. If not a sequential
+	//! @brief Returns the clock pin of a cell. If not a sequential
 	//!        cell, returns null.
 	//! @todo  Improve this function.
 	Rsyn::Pin getClockPin(Rsyn::Instance cell) const {
@@ -1605,7 +1605,7 @@ public:
 		return clock;
 	} // end method
 	
-	//! @brief Returns the data pin of a register cell. If not a sequential
+	//! @brief Returns the data pin of a cell. If not a sequential
 	//!        cell, returns null.
 	//! @todo  Improve this function.
 	Rsyn::Pin getDataPin(Rsyn::Instance cell) const {
@@ -1621,12 +1621,12 @@ public:
 		return data;
 	} // end method
 
-	//! @brief Returns the setup time at the data pin of a register cell.
+	//! @brief Returns the setup time at the data pin of a cell.
 	EdgeArray<Number> getSetupTime(Rsyn::Instance sequential) const {
 		return timingModel->getSetupTime(getDataPin(sequential));
 	} // end method
 
-	//! @brief Returns the hold time at the data pin of a register cell.
+	//! @brief Returns the hold time at the data pin of a cell.
 	EdgeArray<Number> getHoldTime(Rsyn::Instance sequential) const {
 		return timingModel->getHoldTime(getDataPin(sequential));
 	} // end method

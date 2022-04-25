@@ -249,8 +249,8 @@ namespace lemon {
 
         current = state + length;
 
-        register Word *curr = state + length - 1;
-        register long num;
+        Word *curr = state + length - 1;
+        long num;
 
         num = length - shift;
         while (num--) {
@@ -470,7 +470,7 @@ namespace lemon {
   /// \brief Mersenne Twister random number generator
   ///
   /// The Mersenne Twister is a twisted generalized feedback
-  /// shift-register generator of Matsumoto and Nishimura. The period
+  /// shift-generator of Matsumoto and Nishimura. The period
   /// of this generator is \f$ 2^{19937} - 1 \f$ and it is
   /// equi-distributed in 623 dimensions for 32-bit numbers. The time
   /// performance of this generator is comparable to the commonly used

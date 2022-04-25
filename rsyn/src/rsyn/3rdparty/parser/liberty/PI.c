@@ -46,10 +46,10 @@ typedef struct libAttrMap { char *name; attr_enum type; } libAttrMap;
 static si2drMessageHandlerT si2ErrMsg;
 
 const struct libGroupMap *
-lookup_group_name (register const char *str, register unsigned int len);
+lookup_group_name (const char *str, unsigned int len);
 
 const struct libAttrMap *
-lookup_attr_name (register const char *str, register unsigned int len);
+lookup_attr_name (const char *str, unsigned int len);
 
 extern si2drErrorT syntax_check(si2drGroupIdT);
 extern int liberty_parser_parse(void);

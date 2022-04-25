@@ -1290,7 +1290,7 @@ void Infrastructure::diffJezzSolutions( std::ostream& out,
 	out << std::setw(12) << "Relativity" << " ";
 	out << "Cell" << "\n";
 	
-	const register int numPrints = std::min( numCells, (int)diff.size() );
+	const int numPrints = std::min( numCells, (int)diff.size() );
 	for(int i = 0; i < numPrints; i++) {
 		Rsyn::Cell cell = std::get<0>(diff[i]);
 		

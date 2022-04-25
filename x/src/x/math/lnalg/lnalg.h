@@ -47,9 +47,9 @@ void Mul( const SymmetricCompressedRowMatrix &A, const vector< double > &d, cons
 // Description: scalar <- u.v
 
 inline double Dot( const vector< double > &u, const vector< double > &v ) {
-	register double scalar = 0;
-	const register int N = u.size();
-	for ( register int i = 0; i < N; i++ )
+	double scalar = 0;
+	const int N = u.size();
+	for ( int i = 0; i < N; i++ )
 		scalar += u[i]*v[i];
 	return scalar;
 } // end function
@@ -58,9 +58,9 @@ inline double Dot( const vector< double > &u, const vector< double > &v ) {
 // Description: scalar <- u.1
 
 inline double Sum( const vector< double > &u ) {
-	register double scalar = 0;
-	const register int N = u.size();
-	for ( register int i = 0; i < N; i++ )
+	double scalar = 0;
+	const int N = u.size();
+	for ( int i = 0; i < N; i++ )
 		scalar += u[i];
 	return scalar;
 } // end function
@@ -69,9 +69,9 @@ inline double Sum( const vector< double > &u ) {
 // Description: scalar <- u.u
 
 inline double Pow( const vector< double > &u ) {
-	register double scalar = 0;
-	const register int N = u.size();
-	for ( register int i = 0; i < N; i++ )
+	double scalar = 0;
+	const int N = u.size();
+	for ( int i = 0; i < N; i++ )
 		scalar += u[i]*u[i]; // we hope compiler will optimize this :)
 	return scalar;
 } // end function
@@ -80,9 +80,9 @@ inline double Pow( const vector< double > &u ) {
 // Description: scalar <- sqrt(u.u)
 
 inline double Norm( const vector< double > &u ) {
-	register double scalar = 0;
-	const register int N = u.size();
-	for ( register int i = 0; i < N; i++ )
+	double scalar = 0;
+	const int N = u.size();
+	for ( int i = 0; i < N; i++ )
 		scalar += u[i]*u[i]; // we hope compiler will optimize this :)
 	return sqrt( scalar );
 } // end function
@@ -106,8 +106,8 @@ inline double Diff( const vector<double> &v, const vector<double> &u ) {
 // Description: r <- alphau*u + alphav*v
 
 inline void Interpolation( const vector< double > &u, const vector< double > &v, const double alphau, const double alphav, vector< double > &r ) {
-	const register int N = r.size();
-	for ( register int i = 0; i < N; i++ )
+	const int N = r.size();
+	for ( int i = 0; i < N; i++ )
 		r[i] = alphau*u[i] + alphav*v[i];
 } // end function
 
@@ -115,8 +115,8 @@ inline void Interpolation( const vector< double > &u, const vector< double > &v,
 // Description: v <- alpha*u
 
 inline void Scale( const vector< double > &u, const double alpha, vector< double > &v ) {
-	const register int N = u.size();
-	for ( register int i = 0; i < N; i++ )
+	const int N = u.size();
+	for ( int i = 0; i < N; i++ )
 		v[i] = alpha*u[i];
 } // end function
 
@@ -124,8 +124,8 @@ inline void Scale( const vector< double > &u, const double alpha, vector< double
 // Description: r <- alpha*u + beta*v
 
 inline void Add( const vector< double > &u, const double alpha, const vector< double > &v, const double beta, vector< double > &r ) {
-	const register int N = r.size();
-	for ( register int i = 0; i < N; i++ )
+	const int N = r.size();
+	for ( int i = 0; i < N; i++ )
 		r[i] = alpha*u[i] + beta*v[i];
 } // end function
 
@@ -133,8 +133,8 @@ inline void Add( const vector< double > &u, const double alpha, const vector< do
 // Description: r <- u + alpha*v
 
 inline void Add( const vector< double > &u, const vector< double > &v, const double alpha, vector< double > &r ) {
-	const register int N = r.size();
-	for ( register int i = 0; i < N; i++ )
+	const int N = r.size();
+	for ( int i = 0; i < N; i++ )
 		r[i] = u[i] + alpha*v[i];
 } // end function
 
@@ -142,8 +142,8 @@ inline void Add( const vector< double > &u, const vector< double > &v, const dou
 // Description: r <- u + v
 
 inline void Add( const vector< double > &u, const vector< double > &v, vector< double > &r ) {
-	const register int N = r.size();
-	for ( register int i = 0; i < N; i++ )
+	const int N = r.size();
+	for ( int i = 0; i < N; i++ )
 		r[i] = u[i] + v[i];
 } // end function
 
@@ -151,8 +151,8 @@ inline void Add( const vector< double > &u, const vector< double > &v, vector< d
 // Description: r <- u - alpha*v
 
 inline void Sub( const vector< double > &u, const vector< double > &v, const double alpha, vector< double > &r ) {
-	const register int N = r.size();
-	for ( register int i = 0; i < N; i++ )
+	const int N = r.size();
+	for ( int i = 0; i < N; i++ )
 		r[i] = u[i] - alpha*v[i];
 } // end function
 
@@ -160,8 +160,8 @@ inline void Sub( const vector< double > &u, const vector< double > &v, const dou
 // Description: r <- u - v
 
 inline void Sub( const vector< double > &u, const vector< double > &v, vector< double > &r ) {
-	const register int N = r.size();
-	for ( register int i = 0; i < N; i++ )
+	const int N = r.size();
+	for ( int i = 0; i < N; i++ )
 		r[i] = u[i] - v[i];
 } // end function
 
@@ -169,8 +169,8 @@ inline void Sub( const vector< double > &u, const vector< double > &v, vector< d
 // Description: r <- u / alpha
 
 inline void Div( const vector< double > &u, const double alpha, vector< double > &r ) {
-	const register int N = r.size();
-	for ( register int i = 0; i < N; i++ )
+	const int N = r.size();
+	for ( int i = 0; i < N; i++ )
 		r[i] = u[i] / alpha;
 } // end function
 
@@ -178,8 +178,8 @@ inline void Div( const vector< double > &u, const double alpha, vector< double >
 // Description: r <- u
 
 inline void Cpy( const vector< double > &u, vector< double > &r ) {
-	const register int N = r.size();
-	for ( register int i = 0; i < N; i++ )
+	const int N = r.size();
+	for ( int i = 0; i < N; i++ )
 		r[i] = u[i];
 } // end function
 

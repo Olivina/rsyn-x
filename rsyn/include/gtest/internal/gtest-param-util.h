@@ -463,7 +463,7 @@ class TestMetaFactory
 // to ParameterizedTestCaseInfo classes. ParameterizedTestCaseInfoBase
 // accumulates test information provided by TEST_P macro invocations
 // and generators provided by INSTANTIATE_TEST_CASE_P macro invocations
-// and uses that information to register all resulting test instances
+// and uses that information to all resulting test instances
 // in RegisterTests method. The ParameterizeTestCaseRegistry class holds
 // a collection of pointers to the ParameterizedTestCaseInfo objects
 // and calls RegisterTests() on each of them when asked.
@@ -475,7 +475,7 @@ class ParameterizedTestCaseInfoBase {
   virtual const string& GetTestCaseName() const = 0;
   // Test case id to verify identity.
   virtual TypeId GetTestCaseTypeId() const = 0;
-  // UnitTest class invokes this method to register tests in this
+  // UnitTest class invokes this method to tests in this
   // test case right before running them in RUN_ALL_TESTS macro.
   // This method should not be called more then once on any single
   // instance of a ParameterizedTestCaseInfoBase derived class.
@@ -538,7 +538,7 @@ class ParameterizedTestCaseInfo : public ParameterizedTestCaseInfoBase {
         InstantiationInfo(instantiation_name, func, name_func, file, line));
     return 0;  // Return value used only to run this method in namespace scope.
   }
-  // UnitTest class invokes this method to register tests in this test case
+  // UnitTest class invokes this method to tests in this test case
   // test cases right before running tests in RUN_ALL_TESTS macro.
   // This method should not be called more then once on any single
   // instance of a ParameterizedTestCaseInfoBase derived class.

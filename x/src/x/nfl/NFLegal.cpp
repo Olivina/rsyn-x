@@ -21,6 +21,7 @@
  */
 
 #include <iostream>
+#include <boost/container/deque.hpp>
 
 #include "NFLegal.h"
 #include "rsyn/util/Stepwatch.h"
@@ -814,7 +815,8 @@ TNode * NFLegal::pathAugmentationBranchBound(TNode * root, std::deque<TNode*> &p
 
 		Bin * src = parent->clsBin;
 		visitedBins.insert(src);
-		std::deque<TNode> & childreen = parent->clsChildreen;
+		// std::deque<TNode> & childreen = parent->clsChildreen;
+		boost::container::deque<TNode> & childreen = parent->clsChildreen;
 
 		for (Bin * sink : src->allNeighbors()) {
 			if (visitedBins.find(sink) != visitedBins.end()) { // line 14 

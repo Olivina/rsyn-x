@@ -16,7 +16,7 @@
 #include "rsyn/gui/frame/MainFrame.h"
 
 // HOW-TO
-// To register a canvas overlay, just include its .h below and add a call
+// To a canvas overlay, just include its .h below and add a call
 // to "registerOverlay<T>(name, visibility)" where T is the canvas overlay class
 // name, name is the overlay label and visibility is the initial visibility
 // state of the overlay.

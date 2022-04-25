@@ -47,8 +47,8 @@ void Mul( const SquareCompressedRowMatrix &A, const vector< double > &x, vector<
 	// TIP FOR DEBUGGING:
 	// - Try to debug using eigenvector and its respective eigenvalue.
 
-	register int N = x.size();
-	register int i, j, k;
+	int N = x.size();
+	int i, j, k;
 
 	for ( i=0; i < N; i++ ){
 		double &bi = b[i];
@@ -70,8 +70,8 @@ void Mul( const SymmetricCompressedRowMatrix &A, const vector< double > &d, cons
 	// TIP FOR DEBUGGING:
 	// - Try to debug using eigenvector and its respective eigenvalue.
 	
-	register int   N = A.GetDimension();
-	register int   i, j, k;
+	int   N = A.GetDimension();
+	int   i, j, k;
 	
 	for ( i=0; i < N; i++ )
 		b[i]=0;
@@ -108,7 +108,7 @@ void Mul( const SymmetricCompressedRowMatrix &A, const vector< double > &x, vect
 // -----------------------------------------------------------------------------
 
 void Backward( const SquareCompressedRowMatrix &A, const vector< double > &b, vector< double > &x){
-	register int n=b.size()-1;
+	int n=b.size()-1;
 	x[n]=b[n]/A.clsDig[n];
 	for (n=n-1 ; n>=0; n--){
 		x[n] = b[n];
@@ -126,7 +126,7 @@ void Forward( const SquareCompressedRowMatrix &A, const vector< double > &b, vec
 	x[0]=b[0]/A.clsDig[0];
 
 	const int N = A.GetDimension();
-	register int n;
+	int n;
 	for (n=1 ; n<N; n++){
 		x[n] = b[n];
 		for (int i=A.clsRow[n]; i<A.clsRow[n+1]; i++) {

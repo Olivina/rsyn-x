@@ -920,13 +920,13 @@ inline
 void
 Design::registerObserver(T *observer) {
 	static_assert(std::is_base_of<DesignObserver, T>::value,
-			"Unable to register class as observer. "
+			"Unable to class as observer. "
 			"The observer class must inherit from Rsyn::Observer.");
 
 	observer->DesignObserver::observedDesign = Design(data);
 	
 	// Check if the observer implements (overwrites) the event callbacks if so
-	// register it to receive notifications of the respective event.
+	// it to receive notifications of the respective event.
 
 	if (typeid(&DesignObserver::onDesignDestruction) != typeid(&T::onDesignDestruction)) {
 		data->observers[EVENT_DESTRUCTION].push_back(observer);

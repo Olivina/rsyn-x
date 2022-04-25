@@ -167,7 +167,7 @@ SandboxInstance::getTopologicalIndex() const {
 	// as in the case of registers. There's no arc between D and Q pins and
 	// hence D may have a larger topological index than Q. In a forward traverse
 	// of the netlist one may expect that Q would be used as the topological
-	// index of the register while in a backward traverse one would expect
+	// index of the while in a backward traverse one would expect
 	// that the D pin was used.
 
 	// NOTE: In the current implementation the topological order of register

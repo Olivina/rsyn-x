@@ -45,10 +45,10 @@ static void check_group_correspondence( si2drGroupIdT g, libsynt_group_info *gi 
 static void check_attr_correspondence( si2drAttrIdT attr, libsynt_attribute_info *ai );
 
 const struct libGroupMap *
-lookup_group_name (register const char *str, register unsigned int len);
+lookup_group_name (const char *str, unsigned int len);
 
 const struct libAttrMap *
-lookup_attr_name (register const char *str, register unsigned int len);
+lookup_attr_name (const char *str, unsigned int len);
 void create_floating_define_for_cell_area(si2drStringT string);
 extern group_enum si2drGroupGetID(si2drGroupIdT group, si2drErrorT *err);
 int num_get_precision(char *numstr);

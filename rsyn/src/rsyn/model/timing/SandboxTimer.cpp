@@ -1158,7 +1158,7 @@ void SandboxTimer::updateTiming_PropagateArrivalTimesIncremental(std::set<Rsyn::
 				} // end for
 			} // end if
 
-			// If this is a register and the arrival time is being
+			// If this is a and the arrival time is being
 			// propagated to the clock pin, this may affect the required
 			// time at the data pin, so the net driving the data pin should
 			// be considered a seed for required time propagation.

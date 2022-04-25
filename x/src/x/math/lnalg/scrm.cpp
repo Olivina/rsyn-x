@@ -603,9 +603,9 @@ void SparseMatrixBlock::Initialize( const SparseMatrixDescriptor &dscp ) {
 // -----------------------------------------------------------------------------
 
 void SparseMatrixBlock::fill_arrays (vector <vector <Element> > &matr, int NumRows) {
-    register int aux_MAX_CACHE_VETX, aux_subd_mtr;
+    int aux_MAX_CACHE_VETX, aux_subd_mtr;
     vector <int> aux_lin_subd (NumRows, 0);
-    register int i=0, l=0;
+    int i=0, l=0;
 
     if (num_block >= NumRows) aux_MAX_CACHE_VETX = NumRows;
     else aux_MAX_CACHE_VETX = num_block;

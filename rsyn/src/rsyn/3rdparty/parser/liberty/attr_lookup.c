@@ -50,7 +50,7 @@ inline
 #endif
 #endif
 static unsigned int
-attr_hash_func (register const char *str, register unsigned int len)
+attr_hash_func (const char *str, unsigned int len)
 {
   static const unsigned short asso_values[] =
     {
@@ -81,7 +81,7 @@ attr_hash_func (register const char *str, register unsigned int len)
       3760, 3760, 3760, 3760, 3760, 3760, 3760, 3760, 3760, 3760,
       3760, 3760, 3760, 3760, 3760, 3760, 3760
     };
-  register int hval = len;
+  int hval = len;
 
   switch (hval)
     {
@@ -210,7 +210,7 @@ __attribute__ ((__gnu_inline__))
 #endif
 #endif
 const struct libGroupMap *
-lookup_attr_name (register const char *str, register unsigned int len)
+lookup_attr_name (const char *str, unsigned int len)
 {
   static const struct libGroupMap wordlist[] =
     {
@@ -1710,15 +1710,15 @@ lookup_attr_name (register const char *str, register unsigned int len)
 
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
     {
-      register int key = attr_hash_func (str, len);
+      int key = attr_hash_func (str, len);
 
       if (key <= MAX_HASH_VALUE && key >= 0)
         {
-          register int index = lookup[key];
+          int index = lookup[key];
 
           if (index >= 0)
             {
-              register const char *s = wordlist[index].name;
+              const char *s = wordlist[index].name;
 
               if (*str == *s && !strcmp (str + 1, s + 1))
                 return &wordlist[index];

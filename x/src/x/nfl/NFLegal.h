@@ -23,8 +23,10 @@
 #ifndef NFL_NFLEGAL_H
 #define NFL_NFLEGAL_H
 
-#include <vector>
-#include <deque>
+// #include <vector>
+#include <boost/container/vector.hpp>
+// #include <deque>
+#include <boost/container/deque.hpp>
 
 #include <Rsyn/Session>
 #include "rsyn/phy/PhysicalService.h"
@@ -44,7 +46,8 @@ struct TNode {
 	double clsCost = 0.0;
 	Bin * clsBin = nullptr;
 	TNode * clsParent = nullptr;
-	std::deque<TNode> clsChildreen;
+	// std::deque<TNode> clsChildreen;
+	boost::container::deque<TNode> clsChildreen;
 
 }; // end struct 
 

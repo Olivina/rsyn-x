@@ -122,7 +122,7 @@ TYPED_TEST_P(FooTest, DoesBlah) {
 
 TYPED_TEST_P(FooTest, HasPropertyA) { ... }
 
-// Now the tricky part: you need to register all test patterns before
+// Now the tricky part: you need to all test patterns before
 // you can instantiate them.  The first argument of the macro is the
 // test case name; the rest are the names of the tests in this test
 // case.

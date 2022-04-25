@@ -1182,7 +1182,7 @@ class GTEST_API_ UnitTest {
 
 #if GTEST_HAS_PARAM_TEST
   // Returns the ParameterizedTestCaseRegistry object used to keep track of
-  // value-parameterized tests and instantiate and register them.
+  // value-parameterized tests and instantiate and them.
   //
   // INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.
   internal::ParameterizedTestCaseRegistry& parameterized_test_registry()
@@ -1343,7 +1343,7 @@ class GTEST_API_ UnitTest {
 // However, we strongly recommend you to write your own main() and
 // call AddGlobalTestEnvironment() there, as relying on initialization
 // of global variables makes the code harder to read and may cause
-// problems when you register multiple environments from different
+// problems when you multiple environments from different
 // translation units and the environments have dependencies among them
 // (remember that the compiler doesn't guarantee the order in which
 // global variables from different translation units are initialized).

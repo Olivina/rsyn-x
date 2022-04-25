@@ -689,7 +689,7 @@ class TypeParameterizedTestCase {
 
     typedef typename Tests::Head Head;
 
-    // First, register the first test in 'Test' for each type in 'Types'.
+    // First, the first test in 'Test' for each type in 'Types'.
     TypeParameterizedTest<Fixture, Head, Types>::Register(
         prefix, test_location, case_name, test_names, 0);
 

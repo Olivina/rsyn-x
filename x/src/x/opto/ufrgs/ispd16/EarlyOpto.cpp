@@ -183,7 +183,7 @@ void EarlyOpto::runEarlyWireOptimization() {
 	std::vector<std::vector<Rsyn::Timer::PathHop>> paths;
 	timer->queryTopCriticalPaths(Rsyn::EARLY, N, paths);
 
-	std::set<Rsyn::Pin> visited; // process only one register per lcb
+	std::set<Rsyn::Pin> visited; // process only one per lcb
 	
 	int statsProcessed = 0;
 	int statsLegalizationFails = 0;	

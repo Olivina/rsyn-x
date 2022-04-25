@@ -124,7 +124,7 @@ Module::getInstancesPerLogicalDepth(std::vector<std::vector<Rsyn::Instance>> &le
 			case Rsyn::CELL: {
 				// We check the from pin of arcs instead of just checking the
 				// input pins to handle the D pin of registers. We want that
-				// the depth of a register is based on the depth of its CK pin.
+				// the depth of a is based on the depth of its CK pin.
 
 				bool hasArcs = false;
 				for (Rsyn::Arc arc : instance.allArcs()) {

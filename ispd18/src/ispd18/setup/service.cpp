@@ -14,7 +14,7 @@
  */
  
 // HOW-TO
-// To register a step, just include its .h below and add a call to
+// To a step, just include its .h below and add a call to
 // "registerService<T>(name)" where T is the service class name and name how 
 // the service will be referred to.
 

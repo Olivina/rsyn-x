@@ -114,7 +114,7 @@ typedef enum {
  
 /* Declarations of function signatures for each type of callback.
  * These declarations are type-safe when compiling with ANSI C
- * or C++; you will only be able to register a function pointer
+ * or C++; you will only be able to a function pointer
  * with the correct signature for a given type of callback.
  *
  * Each callback function is expected to return 0 if successful.
@@ -140,7 +140,7 @@ typedef enum {
  *
  * Callbacks with the same signature are passed a callback type
  * parameter, which allows an application to write a single callback
- * function, register that function for multiple callbacks, then
+ * function, that function for multiple callbacks, then
  * switch based on the callback type to handle the appropriate type of
  * data.
  */
@@ -152,7 +152,7 @@ typedef int (*lefwVoidCbkFnType) ( lefwCallbackType_e, lefiUserData );
  /* NEW CALLBACK - If your callback returns a pointer to a new class then
   * you must add a type function here. */
 
-/* Functions to call to register a callback function.
+/* Functions to call to a callback function.
  */
 extern void lefwSetVersionCbk(lefwVoidCbkFnType);
 extern void lefwSetCaseSensitiveCbk(lefwVoidCbkFnType);

@@ -862,13 +862,13 @@ inline bool PhysicalDesign::isNetRouted(Rsyn::Net net) const {
 template<class T>
 inline void PhysicalDesign::registerObserver(T *observer) {
 	static_assert(std::is_base_of<PhysicalDesignObserver, T>::value,
-		"Unable to register class as observer. "
+		"Unable to class as observer. "
 		"The observer class must inherit from Rsyn::PhysicalObserver.");
 
 	observer->PhysicalDesignObserver::clsPhDesign = PhysicalDesign(data);
 
 	// Check if the observer implements (overwrites) the event callbacks if so
-	// register it to receive notifications of the respective event.
+	// it to receive notifications of the respective event.
 
 	if (typeid (&PhysicalDesignObserver::onPhysicalDesignDestruction) != typeid (&T::onPhysicalDesignDestruction)) {
 		data->clsPhysicalObservers[PHYSICAL_EVENT_DESTRUCTION].push_back(observer);

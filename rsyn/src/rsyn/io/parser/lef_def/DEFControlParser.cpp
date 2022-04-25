@@ -126,14 +126,14 @@ void DEFControlParser::parseDEF(const std::string &filename, DefDscp &defDscp) {
 	defrSetRegionStartCbk(defRegionStart);
 	defrSetRegionCbk(defRegion);
 
-	// register track call back
+	// track call back
 	defrSetTrackCbk(defTrack);
 
-	// register special net call backs
+	// special net call backs
 	defrSetSNetStartCbk(defSpecialNetStart);
 	defrSetSNetCbk(defSpecialNet);
 
-	// register via call backs
+	// via call backs
 	defrSetViaStartCbk(defViaStart);
 	defrSetViaCbk(defVia);
 

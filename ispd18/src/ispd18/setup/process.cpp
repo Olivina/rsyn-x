@@ -14,7 +14,7 @@
  */
  
 // HOW-TO
-// To register process (e.g. optimization step), just include its .h below and 
+// To process (e.g. optimization step), just include its .h below and 
 // add a call to "registerProcess<T>(name)" where T is the process class name
 // and name how the process will be referred to.
 
