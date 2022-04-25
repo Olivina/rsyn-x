@@ -5,7 +5,7 @@ SRC = $(wildcard *.cpp)
 DEP = $(wildcard *.h)
 OBJ = flute_new.o
 
-CFLAGS = -std=c++11 -Wall -O3 -D_GLIBCXX_USE_CXX11_ABI=0
+CFLAGS = -std=c++17 -Wall -O3 -D_GLIBCXX_USE_CXX11_ABI=0
 LFLAGS = -fopenmp -static -L./libs -lui-timer
 INC = -I./includes
 

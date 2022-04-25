@@ -372,8 +372,8 @@
       </toolsSet>
       <flagsDictionary>
         <element flagsID="0" commonFlags="-O3 -fPIC"/>
-        <element flagsID="1" commonFlags="-O3 -fPIC -std=gnu++11"/>
-        <element flagsID="2" commonFlags="-std=c++11"/>
+        <element flagsID="1" commonFlags="-O3 -fPIC -std=gnu++17"/>
+        <element flagsID="2" commonFlags="-std=c++17"/>
       </flagsDictionary>
       <codeAssistance>
       </codeAssistance>

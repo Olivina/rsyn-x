@@ -24,6 +24,8 @@ set(CMAKE_AUTOMOC ON)
 # Project's name
 project(rsyn)
 
+add_compile_definitions(_GLIBCXX_USE_CXX11_ABI=0)
+
 if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     set(WINDOWS TRUE)
 elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
@@ -38,7 +40,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/x/cmake)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 set(PATH_RSYN ${CMAKE_CURRENT_SOURCE_DIR}/rsyn)
 set(PATH_X ${CMAKE_CURRENT_SOURCE_DIR}/x)
@@ -70,6 +72,11 @@ find_package(GLPK)
 
 # OpenMP (work around)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fopenmp")
+
+#find_package(PkgConfig REQUIRED)
+#pkg_search_module(Qt5Widgets REQUIRED Qt5Widgets)
+#pkg_search_module(Qt5PrintSupport REQUIRED Qt5PrintSupport)
+#pkg_search_module(Qt5OpenGL REQUIRED Qt5OpenGL)
 
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5PrintSupport REQUIRED)
