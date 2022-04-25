@@ -66,6 +66,30 @@ attr[newNet] = computeSomething(net);
 
 **More details about Rsyn are available at [wiki](https://github.com/rsyn/rsyn-x/wiki).**
 
+## Build
+
+For MacOS User:
+
+Don't use Xcode default clang. You may install one from conda.
+
+### Depedencies
+
+```
+conda create --name rsyn
+conda install clang
+brew install libomp qt@5
+...
+<install Boost_1_72_0> 
+--with-libraries=system,headers,iostreams,graph,program_options,filesystem,regex
+...
+# for Qt libraries:
+export CMAKE_PREFIX_PATH=/usr/local/Cellar/qt@5/5.15.3/lib/cmake
+# to use conda clang++:
+export CC=clang CXX=clang++
+```
+
+
+
 ## Reference
 
 Please cite the ISPD 17 paper:
@@ -93,10 +117,10 @@ G. Flach, M. Fogaça, J. Monteiro, M. Johann and R. Reis, ["Rsyn: An Extensible 
 
 ###### Honorable Mention
  Renato Hentschke, and Gustavo Wilke
- 
+
 ## Third-Party Projects
 
-![third-projects](https://github.com/rsyn/rsyn/blob/master/doc/third-parties.png)
+![third-projects](rsyn/doc/third-parties.png)
 
 ## Contact
 
@@ -105,20 +129,20 @@ G. Flach, M. Fogaça, J. Monteiro, M. Johann and R. Reis, ["Rsyn: An Extensible 
 ## License
 
  Copyright 2014-2017 Rsyn
- 
+
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
- 
+
  http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
- 
+
  ## Acknowledgement
- 
+
  This work is partially supported by Brazilian Coordination for the Improvement of Higher Education Personnel
 ([CAPES](http://www.capes.gov.br/)) and by the National Council for Scientific and Technological Development ([CNPq](http://cnpq.br/)).

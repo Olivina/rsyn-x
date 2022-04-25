@@ -71,7 +71,7 @@ find_package(GLPK)
 #endif()
 
 # OpenMP (work around)
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fopenmp")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fopenmp -L/usr/local/Cellar/libomp/13.0.1/lib -lomp")
 
 #find_package(PkgConfig REQUIRED)
 #pkg_search_module(Qt5Widgets REQUIRED Qt5Widgets)
